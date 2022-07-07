@@ -39,7 +39,7 @@
         android:id="@+id/selectedTimeTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="48dp"
+        android:layout_marginHorizontal="64dp"
         android:layout_marginTop="36dp"
         android:background="@color/black_overlay"
         android:text="07 : 00 AM"
@@ -129,14 +129,14 @@
         android:text="Learn more about getting fit!"
         android:textColor="@color/black"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/dietGuideBtn"
+        app:layout_constraintBottom_toTopOf="@+id/GuideBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.152"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutWPM" />
 
     <Button
-        android:id="@+id/dietGuideBtn"
+        android:id="@+id/GuideBtn"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_marginHorizontal="48dp"

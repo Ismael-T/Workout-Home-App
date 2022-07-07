@@ -1,17 +1,18 @@
 package com.ji_tarras.workouthome;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.timepicker.MaterialTimePicker;
 import com.google.android.material.timepicker.TimeFormat;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private Calendar calendar;
     private AlarmManager alarmManager;
     private PendingIntent pendingIntent;
+    private boolean alarmFlag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,19 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         createNotificationChannel();
+
+        binding.GuideBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        SharedPreferences sp = getSharedPreferences("time_sp", MODE_PRIVATE);
+        String time = sp.getString("time", "");
+        if (!time.isEmpty()) {
+            binding.selectedTimeTv.setText(time);
+            binding.alarmStatusTv.setText("Daily Workout Alarm currently set to" + time);
+        }
 
         binding.selectedTimeTv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,15 +87,25 @@ public class MainActivity extends AppCompatActivity {
         alarmManager.cancel(pendingIntent);
         Toast.makeText(this, "Daily Workout Alarm cancelled", Toast.LENGTH_SHORT).show();
         binding.alarmStatusTv.setText("Daily Workout Alarm is currently not set.");
+
+        alarmFlag = false;
     }
 
     private void setAlarm() {
+        if (!alarmFlag) {
+            Toast.makeText(getApplicationContext(), "Please set time for the alarm.", Toast.LENGTH_LONG).show();
+            return;
+        }
 
         alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
         Intent intent = new Intent(this, AlarmReceiver.class);
 
-        pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+        pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        if (calendar.before(Calendar.getInstance())) {
+            calendar.add(Calendar.DATE, 1);
+        }
 
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
                 AlarmManager.INTERVAL_DAY, pendingIntent);
@@ -92,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showTimePicker() {
-
+        alarmFlag = true;
         picker = new MaterialTimePicker.Builder()
                 .setTimeFormat(TimeFormat.CLOCK_12H)
                 .setHour(7)
@@ -123,6 +148,10 @@ public class MainActivity extends AppCompatActivity {
                 calendar.set(Calendar.MINUTE, picker.getMinute());
                 calendar.set(Calendar.SECOND, 0);
                 calendar.set(Calendar.MILLISECOND, 0);
+                SharedPreferences sp = getSharedPreferences("time_sp", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("time", binding.selectedTimeTv.getText().toString());
+                editor.apply();
 
             }
         });
