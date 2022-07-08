@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#379ADC"
+    android:background="@color/l_mariner_blue"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -13,10 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="24dp"
         android:text="Set time for daily workout"
         android:textColor="@color/white"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +31,8 @@
         android:layout_marginTop="4dp"
         android:text="Daily Workout Alarm is currently not set."
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="12sp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="@+id/mainTv"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/mainTv"
@@ -43,10 +45,11 @@
         android:layout_marginHorizontal="64dp"
         android:layout_marginTop="36dp"
         android:background="#88ffffff"
-        android:text="07 : 00 AM"
+        android:text="7 : 00 AM"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/mainTv"
         tools:layout_editor_absoluteX="48dp" />
 
@@ -81,21 +84,29 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="12dp"
-        android:background="@color/black_overlay"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/round"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cancelAlarmBtn">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/start" />
+
         <TextView
             android:layout_width="198dp"
             android:layout_height="56dp"
             android:layout_gravity="center"
-            android:background="@color/black_overlay"
+            android:background="@drawable/round"
             android:gravity="center"
-            android:text="Begin Workout" />
+            android:text="Begin Workout"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
     </FrameLayout>
 
@@ -104,20 +115,28 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="24dp"
         android:background="@color/black_overlay"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutWOH">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/stonks" />
 
         <TextView
             android:layout_width="196dp"
             android:layout_height="56dp"
             android:layout_gravity="center"
-            android:background="@color/black_overlay"
+            android:background="@drawable/round"
             android:gravity="center"
-            android:text="My Weekly Progress" />
+            android:text="My Weekly Progress"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
     </FrameLayout>
 
@@ -126,15 +145,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="12dp"
         android:text="Learn more about getting fit!"
         android:textColor="@color/white"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/GuideBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.152"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutWPM" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/GuideBtn"
@@ -142,9 +161,11 @@
         android:layout_height="64dp"
         android:layout_marginHorizontal="48dp"
         android:layout_marginBottom="24dp"
+        android:color="@color/black"
         android:text="Workout Home Fitness Guide"
-        android:textSize="12sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

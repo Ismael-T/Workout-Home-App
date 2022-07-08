@@ -3,12 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/404is/Desktop/2nd Semester/IT Electives 3/WorkoutHomeApp/app/src/main/res/layout/activity_guidebooks.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/404is/Desktop/2nd Semester/IT Electives 3/WorkoutHomeApp/app/src/main/res/drawable/round.xml" value="0.1725" />
+        <entry key="..\:/Users/404is/Desktop/2nd Semester/IT Electives 3/WorkoutHomeApp/app/src/main/res/layout/activity_guidebooks.xml" value="0.2" />
         <entry key="..\:/Users/404is/Desktop/2nd Semester/IT Electives 3/WorkoutHomeApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/404is/Desktop/2nd Semester/IT Electives 3/WorkoutHomeApp/app/src/main/res/layout/activity_main_splash_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/404is/Desktop/2nd Semester/IT Electives 3/WorkoutHomeApp/app/src/main/res/layout/activity_recipe_info.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/404is/Desktop/2nd Semester/IT Electives 3/WorkoutHomeApp/app/src/main/res/layout/activity_recipe_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/404is/Desktop/2nd Semester/IT Electives 3/WorkoutHomeApp/app/src/main/res/layout/activity_workout_info.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/404is/Desktop/2nd Semester/IT Electives 3/WorkoutHomeApp/app/src/main/res/layout/activity_workout_list.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/404is/Desktop/2nd Semester/IT Electives 3/WorkoutHomeApp/app/src/main/res/layout/activity_workout_sets.xml" value="0.4" />
+        <entry key="..\:/Users/404is/Desktop/2nd Semester/IT Electives 3/WorkoutHomeApp/app/src/main/res/layout/activity_workout_sets.xml" value="0.195" />
         <entry key="..\:/Users/404is/Desktop/2nd Semester/IT Electives 3/WorkoutHomeApp/app/src/main/res/layout/activity_workout_start.xml" value="0.264" />
+        <entry key="..\:/Users/404is/Desktop/2nd Semester/IT Electives 3/WorkoutHomeApp/app/src/main/res/layout/c_info_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/404is/Desktop/2nd Semester/IT Electives 3/WorkoutHomeApp/app/src/main/res/layout/c_list_layout.xml" value="0.4765625" />
       </map>
     </option>
   </component>

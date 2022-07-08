@@ -56,7 +56,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Guidebooks"
             android:exported="true">
@@ -75,6 +74,33 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".WorkoutInfo"
+            android:exported="true">
+            <intent-filter>
+                <action android:name=".WorkoutInfo" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RecipeList"
+            android:exported="true">
+            <intent-filter>
+                <action android:name=".RecipeList" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RecipeInfo"
+            android:exported="true">
+            <intent-filter>
+                <action android:name=".RecipeInfo" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <receiver
             android:name=".AlarmReceiver"
@@ -87,7 +113,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
-
     </application>
 
 </manifest>

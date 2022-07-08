@@ -14,13 +14,13 @@ public class WorkoutSets extends AppCompatActivity implements View.OnClickListen
     TextView light, moderate, intense;
 
     private boolean doubleBackToExitPressedOnce;
-    private Handler mHandler = new Handler();
     private final Runnable mRunnable = new Runnable() {
         @Override
         public void run() {
             doubleBackToExitPressedOnce = false;
         }
     };
+    private Handler mHandler = new Handler();
 
     @Override
     protected void onDestroy() {
@@ -48,6 +48,7 @@ public class WorkoutSets extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_sets);
+        getSupportActionBar().hide();
         light = findViewById(R.id.lightWorkout);
         moderate = findViewById(R.id.moderateWorkout);
         intense = findViewById(R.id.intenseWorkout);
@@ -71,7 +72,6 @@ public class WorkoutSets extends AppCompatActivity implements View.OnClickListen
 
         Intent j = new Intent(WorkoutSets.this, WorkoutStart.class);
         startActivity(j);
-        finish();
 
     }
 }

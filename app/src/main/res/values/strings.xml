@@ -1,6 +1,156 @@
 <resources>
+    <!--    App Res     -->
+
     <string name="app_name">Workout Home</string>
     <string name="title_activity_workout_start">WorkoutStart</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!--    Workouts    -->
+
+    <string name="b_jump_squat">The 180 jump squat is a plyometric move that fully engages your lower body and your core and helps build strength, speed, and increases aerobic fitness. This exercise helps to tone your legs and glutes, improves core strength, and boosts weight loss.</string>
+    <string name="b_alt_side_lunge">The alternating side lunge targets your glutes, quads, hamstrings, and inner thighs, and helps to strengthen your core, calves, and outer thighs. This exercise improves dynamic balance and agility and increases performance and flexibility.</string>
+    <string name="b_bicycle_crunches">Adding bicycle crunches to your workout routine helps to increase core strength, slims down your waist, and improves your stability and flexibility. This exercise works your abs and obliques and because it keeps your body moving constantly, boosts your heart rate, and burns even more calories.</string>
+    <string name="b_plank">The up and down plank strengthens and tones your core, glutes, arms, wrists, and shoulders. This exercise helps to improve your posture, tightens the midsection, and boosts weight loss.</string>
+    <string name="b_bent_over_twist">The bent over twist is a great exercise to improve your flexibility and stability. It’s also a good warm-up exercise because it rotates your body and moves it through the transverse plane of motion. While getting your body ready for a workout it’s important to do, not only back and forth and side to side movements, but also rotation movements.</string>
+    <string name="b_burpees">Burpees are an intense full body exercise that increases heart rate, strength, agility, and flexibility. This exercise is one of the most complete since it uses all major muscle groups and burns a ton of calories in a short period of time.</string>
+    <string name="b_pushup">Adding push-ups to your workout routine helps to shape and tone your shoulders, triceps and glutes, strengthens the chest, and helps to tone and tighten your core.</string>
+    <string name="b_side_plank">The side plank rotation activates the deep abdominal muscles and helps to tighten and shrink your waistline. This exercise can help you improve balance, boost your endurance, and increases core strength.</string>
+    <string name="b_pistol_squat">The pistol squat is an advanced move that tones and builds your lower body and corrects muscle imbalances. Since this exercise requires core support and posture alignment, it also challenges and strengthens the core and improves both stability and coordination.</string>
+    <string name="jump_squat">Steps:\n\n1. Stand with your feet a little wider than shoulder-width apart, your toes pointing slightly outward, and sit back.\n\n
+2. Push through the heels to jump up, spinning to the left 180 degrees.\n\n
+3. Land on your toes with your knees slightly bent and squat.\n\n
+4. Quickly jump up, spinning to the right, and go back into the squat position.\n\n
+5. Repeat until the set is complete.</string>
+    <string name="alt_side_lunge">Steps:\n\n1. Stand tall with your feet hip-width apart.\n\n
+2. Step out to the side with your left leg, bend your left knee and push your hips back.\n\n
+3. Return to the starting position and repeat the movement with the right leg.\n\n
+4. Keep alternating legs until the set is complete.</string>
+    <string name="bicycle_crunches">Steps:\n\n1. Lie on your back, lift your shoulders off the mat and raise both legs.\n\n
+2. Bring one knee and the opposing elbow close to each other by crunching to one side, and fully extend the other leg.\n\n
+3. Return to the starting position and then crunch to the opposite side.\n\n
+4. Repeat until the set is complete.</string>
+    <string name="plank">Steps:\n\n1. Start in a plank position, with your wrists under your shoulders and your feet hip-width apart.\n\n
+2. Bend your left arm, place your left elbow on the mat and then bend your right arm and place your right elbow on the mat.\n\n
+3. Place your left hand on the mat, straighten your left arm and then place your right hand on the mat and straighten your right arm.\n\n
+4. Switch sides and repeat this up and down movement until the set is complete.</string>
+    <string name="bent_over_twist">Steps:\n\n1. Stand straight with your feet slightly wider than shoulder-width apart and raise your arms to the sides.\n\n
+2. Bend and rotate your torso to the right, touching your right feet with your left hand.\n\n
+3. Return to the starting position and repeat on the other side.</string>
+    <string name="burpees">Steps:\n\n1. Stand straight with your feet shoulder-width apart.\n\n
+2. Squat and place your hands in front of your feet.\n\n
+3. Jump back until your legs are fully extended and your body is in plank position.\n\n
+4. Do a push up, jump forward, and then push through the heels to return to the starting position.\n\n
+5. Repeat until the set is complete.</string>
+    <string name="pushup">Steps:\n\n1. With your legs extended back, place the hands below the shoulders, slightly wider than shoulder-width apart.\n\n
+2. Start bending your elbows and lower your chest until it’s just above the floor.\n\n
+3. Push back to the starting position. A 1-second push, 1-second pause, 2-second down count is ideal.\n\n
+4. Repeat.</string>
+    <string name="side_plank">Steps:\n\n1. Start in a side plank position, with your right shoulder over your elbow, your body in a straight line, and reach your left hand toward the ceiling.\n\n
+2. Twist your torso forward and slowly place your left arm under your body.\n\n
+3. Repeat and then switch sides.</string>
+    <string name="pistol_squat">Steps:\n\n1. Stand up straight with your feet hip-width apart and lift your left leg in front of you.\n\n
+2. Start bending your right knee and slowly lower your hips back.\n\n
+3. Push through the right heel to return to the starting position.\n\n
+4. Switch to the left side and repeat.</string>
+
+    <!--    Diet Recipes    -->
+
+    <string name="mushroom_ing">
+        Ingredients:\n\n
+        2 tablespoons extra-virgin olive oil\n
+        1 pound cremini mushrooms, trimmed and sliced\n
+        5 medium cloves garlic, finely chopped\n
+        2 teaspoons dry mustard\n
+        1 teaspoon onion powder\n
+        1 teaspoon salt\n
+        5 ounces baby spinach\n
+        12 large eggs\n
+        ¾ cup half-and-half\n
+        1½ cups shredded Gruyère cheese, \npreferably cave-aged, divided\n
+        2 teaspoons fresh thyme leaves</string>
+    <string name="mushroom_steps">
+        Steps:\n\n
+        Step 1\n
+        Preheat oven to 375°F.\n
+        Coat a 9-by-13-inch baking dish with cooking spray.\n
+        Heat oil in a large skillet over medium-high heat.\n\n
+        Step 2\n
+        Add mushrooms in an even layer; cook, undisturbed, until starting to brown, 5 to 6 minutes.\n\n
+        Stir and continue to cook, undisturbed, until golden brown on the bottom, for about 3 minutes.\n
+        Stir and continue to cook, stirring occasionally, until the mushrooms are browned all over and the liquid has evaporated, about 3 minutes.\n\n
+        Step 3\n
+        Add garlic, dry mustard, onion powder and salt; cook and stir, until fragrant, for about 1 minute.\n
+        Add spinach and cook, stirring constantly, until the spinach wilts, for about 1 to 2 minutes.\n
+        Set aside to cool slightly, about 10 minutes.\n\n
+        Step 4\n
+        Crack eggs into a large bowl and whisk until completely smooth.\n
+        Add half-and-half and whisk until combined.\n
+        Reserve 1/2 cup of the vegetable mixture; scatter the remaining mixture in the prepared baking dish.\n
+        Sprinkle evenly with 3/4 cup Gruyère.\n\n
+        Step 5\n
+        Pour the egg mixture over the top.\n
+        Sprinkle evenly with the remaining 3/4 cup Gruyère and the reserved 1/2 cup vegetable mixture.\n
+        Bake until puffed, golden brown and just set, 30 to 35 minutes.\n\n
+        Step 6\n
+        Let cool slightly, about 10 minutes.\n
+        Sprinkle with thyme before serving.</string>
+
+    <string name="summer_ing">
+        Ingredients:\n\n
+        2 tablespoons olive oil\n
+        12 ounces baby potatoes, thinly sliced\n
+        4 cups thinly sliced vegetables (mushrooms, bell peppers)\n
+        3 scallions, thinly sliced, green and white parts separated\n
+        1 teaspoon minced fresh herbs, such as rosemary or thyme\n
+        6 large eggs, lightly beaten\n
+        2 cups packed leafy greens, (baby spinach / baby kale)\n
+        ½ teaspoon salt</string>
+    <string name="summer_steps">
+        Steps:\n\n
+        Step 1\n
+        Heat oil in a large cast-iron or nonstick skillet over medium heat.\n
+        Add potatoes; cover and cook, stirring several times, until they begin\n
+        softening, for about 8 minutes.\n\n
+        Step 2:\n
+        Add sliced vegetables and scallion whites; cook uncovered, stirring occasionally, until the vegetables are tender and lightly browned,\n
+        for about 8 to 10 minutes.\n
+        Stir in herbs. Move the vegetable mixture to the perimeter of the pan.\n\n
+        Step 3:\n
+        Reduce heat to medium-low.\n
+        Add eggs and scallion greens to the center of the pan.\n
+        Cook, stirring, until the eggs are softly scrambled, about 2 minutes.\n\n
+        Step 4:\n
+        Stir leafy greens into the eggs.\n
+        Remove from heat and stir to combine well.\n
+        Stir in salt.</string>
+
+    <string name="sweetpotato_ing">
+        Ingredients:\n\n
+        2 tablespoons extra-virgin olive oil plus 1 teaspoon, divided\n
+        1 pound sweet potato, peeled and cut into 1/2-inch pieces\n
+        ½ teaspoon salt, divided\n
+        2 cups small broccoli florets\n
+        3 small scallions, sliced, whites and greens separated\n
+        1 clove garlic, minced\n
+        1 cup cooked wild rice or wild rice blend\n
+        2 tablespoons chopped flat-leaf parsley\n
+        2 tablespoons finely chopped fresh tarragon\n
+        4 large eggs</string>
+    <string name="sweetpotato_steps">
+        Steps:\n\n
+        Step 1\n
+        Heat 1 tablespoon oil in a large nonstick skillet over medium heat.\n
+        Add sweet potatoes and season with 1/4 teaspoon salt.\n
+        Cook &amp; stir, until lightly browned and softened, 8 to 10 minutes.\n\n
+        Step 2\n
+        Add broccoli and 1 tablespoon oil; cook, stirring occasionally, until softened, 3 to 5 minutes.\n
+        Add spring onion (or scallion) whites and garlic; cook, stirring, for 1 minute.\n\n
+        Step 3\n
+        Stir in rice, spring onion (or scallion) greens, parsley and tarragon and remove from heat.\n
+        Transfer to a plate and cover to keep warm.\n\n
+        Step 4\n
+        Heat the remaining 1 teaspoon oil in the pan over medium heat.\n
+        Crack eggs into pan and season with 1/4 teaspoon salt.\n
+        Cook to desired doneness, 1 1/2 to 2 minutes for a runny yolk and
+        3 1/2 to 4 minutes for a firmer yolk.\n
+        Serve the eggs on top of the hash.</string>
 </resources>

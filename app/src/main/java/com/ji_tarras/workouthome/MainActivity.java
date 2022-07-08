@@ -22,16 +22,14 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final Handler mHandler = new Handler();
     private ActivityMainBinding binding;
     private MaterialTimePicker picker;
     private Calendar calendar;
     private AlarmManager alarmManager;
     private PendingIntent pendingIntent;
     private boolean alarmFlag;
-
     private boolean doubleBackToExitPressedOnce;
-    private final Handler mHandler = new Handler();
-
     private final Runnable mRunnable = new Runnable() {
         @Override
         public void run() {
@@ -66,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getSupportActionBar().hide();
         createNotificationChannel();
 
         binding.linearLayoutWOH.setOnClickListener(v -> {
@@ -79,12 +78,11 @@ public class MainActivity extends AppCompatActivity {
         binding.GuideBtn.setOnClickListener(v -> {
             Intent g = new Intent(MainActivity.this, Guidebooks.class);
             startActivity(g);
-            finish();
         });
 
         SharedPreferences sp = getSharedPreferences("time_sp", MODE_PRIVATE);
         String time = sp.getString("time", "");
-        if (time.length()!=1) {
+        if (time.length() != 1) {
             binding.selectedTimeTv.setText(time);
             binding.alarmStatusTv.setText("Daily Workout Alarm currently set to " + time);
         }
@@ -159,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
             if (picker.getHour() > 12) {
 
                 binding.selectedTimeTv.setText(
-                        String.format("%02d", (picker.getHour() - 12)) + " : " + String.format("%02d", picker.getMinute()) + " PM"
+                        (picker.getHour() - 12) + " : " + String.format("%02d", picker.getMinute()) + " PM"
                 );
 
             } else {
