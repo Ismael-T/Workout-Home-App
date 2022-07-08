@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#379ADC"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -14,7 +15,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="6dp"
         android:text="Set time for daily workout"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.144"
@@ -28,7 +29,7 @@
         android:layout_gravity="start"
         android:layout_marginTop="4dp"
         android:text="Daily Workout Alarm is currently not set."
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/mainTv"
         app:layout_constraintHorizontal_bias="0.0"
@@ -41,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="64dp"
         android:layout_marginTop="36dp"
-        android:background="@color/black_overlay"
+        android:background="#88ffffff"
         android:text="07 : 00 AM"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -75,14 +76,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selectedTimeTv" />
 
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/linearLayoutWOH"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="12dp"
         android:background="@color/black_overlay"
-        android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.416"
@@ -92,20 +92,20 @@
         <TextView
             android:layout_width="198dp"
             android:layout_height="56dp"
+            android:layout_gravity="center"
             android:background="@color/black_overlay"
             android:gravity="center"
             android:text="Begin Workout" />
 
-    </LinearLayout>
+    </FrameLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/linearLayoutWPM"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="24dp"
         android:background="@color/black_overlay"
-        android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,11 +114,12 @@
         <TextView
             android:layout_width="196dp"
             android:layout_height="56dp"
+            android:layout_gravity="center"
             android:background="@color/black_overlay"
             android:gravity="center"
             android:text="My Weekly Progress" />
 
-    </LinearLayout>
+    </FrameLayout>
 
     <TextView
         android:id="@+id/textView2"
@@ -127,7 +128,7 @@
         android:layout_gravity="start"
         android:layout_marginBottom="6dp"
         android:text="Learn more about getting fit!"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/GuideBtn"
         app:layout_constraintEnd_toEndOf="parent"

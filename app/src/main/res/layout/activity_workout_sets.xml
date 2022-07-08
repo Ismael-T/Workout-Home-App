@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#379ADC"
     tools:context=".WorkoutSets">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/workoutSetsTv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginTop="24dp"
         android:text="Workouts at Home"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="23sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.117"
@@ -21,96 +22,116 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/workoutSetsTv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginTop="6dp"
-        android:text="Close to Home. Close to Work"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="12dp"
         android:text="no equipment needed"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-    app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/workoutSetsTv1"
+        app:layout_constraintTop_toBottomOf="@+id/workoutSetsTv1" />
 
-    <LinearLayout
-        android:id="@+id/linearLayoutS1"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginHorizontal="24dp"
-        android:background="@color/black_overlay"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayoutS3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutS2">
 
-        <TextView
-            android:layout_width="250dp"
-            android:layout_height="75dp"
-            android:background="@color/black_overlay"
-            android:gravity="center"
-            android:lineSpacingExtra="12dp"
-            android:text="Short, Sweet, Sweat\n3 min" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayoutS2"
+    <FrameLayout
+        android:id="@+id/frame1"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="24dp"
-        android:background="@color/black_overlay"
-        android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintTop_toBottomOf="@+id/workoutSetsTv2">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/light" />
 
         <TextView
+            android:id="@+id/lightWorkout"
             android:layout_width="250dp"
             android:layout_height="75dp"
-            android:background="@color/black_overlay"
+            android:layout_gravity="center"
+            android:background="#992980B9"
             android:gravity="center"
             android:lineSpacingExtra="12dp"
-            android:text="Short, Sweet, Sweat\n3 min" />
+            android:text="Light Workout Set\n3 min"
+            android:textColor="@color/white" />
+    </FrameLayout>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayoutS3"
+    <FrameLayout
+        android:id="@+id/frame2"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginBottom="24dp"
-        android:background="@color/black_overlay"
-        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/frame3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/moderate" />
+
+        <TextView
+            android:id="@+id/moderateWorkout"
+            android:layout_width="250dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:background="#992980B9"
+            android:gravity="center"
+            android:lineSpacingExtra="12dp"
+            android:text="Moderate Workout Set\n5 min"
+            android:textColor="@color/white" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame3"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="48dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/intense" />
+
         <TextView
+            android:id="@+id/intenseWorkout"
             android:layout_width="250dp"
             android:layout_height="75dp"
-            android:background="@color/black_overlay"
+            android:layout_gravity="center"
+            android:background="#992980B9"
             android:gravity="center"
             android:lineSpacingExtra="12dp"
-            android:text="Short, Sweet, Sweat\n3 min" />
+            android:text="Intense Workout Set\n8 min"
+            android:textColor="@color/white" />
+    </FrameLayout>
 
-    </LinearLayout>
+<!--    <Button-->
+<!--        android:id="@+id/backBtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:background="#00000000"-->
+<!--        android:text="back to Dashboard"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="12sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

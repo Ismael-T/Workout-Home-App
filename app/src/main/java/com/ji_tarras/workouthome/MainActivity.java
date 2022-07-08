@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
+import android.os.Handler;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +29,38 @@ public class MainActivity extends AppCompatActivity {
     private PendingIntent pendingIntent;
     private boolean alarmFlag;
 
+    private boolean doubleBackToExitPressedOnce;
+    private final Handler mHandler = new Handler();
+
+    private final Runnable mRunnable = new Runnable() {
+        @Override
+        public void run() {
+            doubleBackToExitPressedOnce = false;
+        }
+    };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (mHandler != null) {
+            mHandler.removeCallbacks(mRunnable);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Press BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        mHandler.postDelayed(mRunnable, 2000);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,44 +68,36 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         createNotificationChannel();
 
-        binding.GuideBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
+        binding.linearLayoutWOH.setOnClickListener(v -> {
+            Intent woh = new Intent(MainActivity.this, WorkoutSets.class);
+            startActivity(woh);
         });
+
+        binding.linearLayoutWPM.setOnClickListener(v -> {
+
+        });
+        binding.GuideBtn.setOnClickListener(v -> {
+            Intent g = new Intent(MainActivity.this, Guidebooks.class);
+            startActivity(g);
+            finish();
+        });
+
         SharedPreferences sp = getSharedPreferences("time_sp", MODE_PRIVATE);
         String time = sp.getString("time", "");
-        if (!time.isEmpty()) {
+        if (time.length()!=1) {
             binding.selectedTimeTv.setText(time);
-            binding.alarmStatusTv.setText("Daily Workout Alarm currently set to" + time);
+            binding.alarmStatusTv.setText("Daily Workout Alarm currently set to " + time);
         }
 
-        binding.selectedTimeTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showTimePicker();
-            }
-        });
+        binding.selectedTimeTv.setOnClickListener(v -> showTimePicker());
 
-        binding.setAlarmBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setAlarm();
-            }
-        });
+        binding.setAlarmBtn.setOnClickListener(v -> setAlarm());
 
-        binding.cancelAlarmBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cancelAlarm();
-            }
-        });
+        binding.cancelAlarmBtn.setOnClickListener(v -> cancelAlarm());
 
     }
 
     private void cancelAlarm() {
-
         Intent intent = new Intent(this, AlarmReceiver.class);
 
         pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
@@ -87,7 +111,10 @@ public class MainActivity extends AppCompatActivity {
         alarmManager.cancel(pendingIntent);
         Toast.makeText(this, "Daily Workout Alarm cancelled", Toast.LENGTH_SHORT).show();
         binding.alarmStatusTv.setText("Daily Workout Alarm is currently not set.");
-
+        SharedPreferences sp = getSharedPreferences("time_sp", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("time", "0");
+        editor.apply();
         alarmFlag = false;
     }
 
@@ -127,33 +154,30 @@ public class MainActivity extends AppCompatActivity {
 
         picker.show(getSupportFragmentManager(), "workouthome");
 
-        picker.addOnPositiveButtonClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        picker.addOnPositiveButtonClickListener(v -> {
 
-                if (picker.getHour() > 12) {
+            if (picker.getHour() > 12) {
 
-                    binding.selectedTimeTv.setText(
-                            String.format("%02d", (picker.getHour() - 12)) + " : " + String.format("%02d", picker.getMinute()) + " PM"
-                    );
+                binding.selectedTimeTv.setText(
+                        String.format("%02d", (picker.getHour() - 12)) + " : " + String.format("%02d", picker.getMinute()) + " PM"
+                );
 
-                } else {
+            } else {
 
-                    binding.selectedTimeTv.setText(picker.getHour() + " : " + String.format("%02d", picker.getMinute()) + " AM");
-
-                }
-
-                calendar = Calendar.getInstance();
-                calendar.set(Calendar.HOUR_OF_DAY, picker.getHour());
-                calendar.set(Calendar.MINUTE, picker.getMinute());
-                calendar.set(Calendar.SECOND, 0);
-                calendar.set(Calendar.MILLISECOND, 0);
-                SharedPreferences sp = getSharedPreferences("time_sp", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sp.edit();
-                editor.putString("time", binding.selectedTimeTv.getText().toString());
-                editor.apply();
+                binding.selectedTimeTv.setText(picker.getHour() + " : " + String.format("%02d", picker.getMinute()) + " AM");
 
             }
+
+            calendar = Calendar.getInstance();
+            calendar.set(Calendar.HOUR_OF_DAY, picker.getHour());
+            calendar.set(Calendar.MINUTE, picker.getMinute());
+            calendar.set(Calendar.SECOND, 0);
+            calendar.set(Calendar.MILLISECOND, 0);
+            SharedPreferences sp = getSharedPreferences("time_sp", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putString("time", binding.selectedTimeTv.getText().toString());
+            editor.apply();
+
         });
 
     }
