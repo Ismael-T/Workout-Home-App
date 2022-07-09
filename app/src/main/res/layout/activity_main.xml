@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:text="Set time for daily workout"
         android:textColor="@color/white"
         android:textSize="24sp"
@@ -21,7 +21,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/alarmStatusTv"
@@ -36,7 +37,8 @@
         app:layout_constraintEnd_toEndOf="@+id/mainTv"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/mainTv"
-        app:layout_constraintTop_toBottomOf="@+id/mainTv" />
+        app:layout_constraintTop_toBottomOf="@+id/mainTv"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/selectedTimeTv"
@@ -44,14 +46,14 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="64dp"
         android:layout_marginTop="36dp"
-        android:background="#88ffffff"
+        android:background="@drawable/round_time"
         android:text="7 : 00 AM"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="48sp"
-        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/mainTv"
-        tools:layout_editor_absoluteX="48dp" />
+        tools:layout_editor_absoluteX="48dp"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/setAlarmBtn"
@@ -60,10 +62,12 @@
         android:layout_marginHorizontal="26dp"
         android:layout_marginTop="6dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/round"
         android:text="Set Alarm"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectedTimeTv" />
+        app:layout_constraintTop_toBottomOf="@+id/selectedTimeTv"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/cancelAlarmBtn"
@@ -72,21 +76,24 @@
         android:layout_marginHorizontal="26dp"
         android:layout_marginTop="6dp"
         android:layout_marginEnd="56dp"
+        android:background="@drawable/round"
         android:text="Cancel"
         android:textSize="15sp"
         app:layout_constraintEnd_toStartOf="@+id/setAlarmBtn"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectedTimeTv" />
+        app:layout_constraintTop_toBottomOf="@+id/selectedTimeTv"
+        tools:ignore="HardcodedText" />
 
-    <FrameLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/linearLayoutWOH"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="175dp"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/round"
+        android:layout_marginTop="12dp"
+        android:elevation="10dp"
         android:orientation="horizontal"
+        app:cardCornerRadius="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,7 +103,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/start" />
+            android:src="@drawable/start"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="198dp"
@@ -106,17 +114,19 @@
             android:gravity="center"
             android:text="Begin Workout"
             android:textColor="@color/white"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
 
-    </FrameLayout>
+    </androidx.cardview.widget.CardView>
 
-    <FrameLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/linearLayoutWPM"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="175dp"
         android:layout_marginHorizontal="24dp"
-        android:background="@color/black_overlay"
+        android:elevation="10dp"
         android:orientation="horizontal"
+        app:cardCornerRadius="30sp"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,7 +136,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/stonks" />
+            android:src="@drawable/stonks"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="196dp"
@@ -136,9 +147,10 @@
             android:gravity="center"
             android:text="My Weekly Progress"
             android:textColor="@color/white"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
 
-    </FrameLayout>
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/textView2"
@@ -153,19 +165,22 @@
         app:layout_constraintBottom_toTopOf="@+id/GuideBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.152"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/GuideBtn"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:layout_marginHorizontal="48dp"
+        android:layout_marginHorizontal="24dp"
         android:layout_marginBottom="24dp"
+        android:background="@drawable/round"
         android:color="@color/black"
         android:text="Workout Home Fitness Guide"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

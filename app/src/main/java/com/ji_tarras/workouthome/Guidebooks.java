@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Objects;
+
 public class Guidebooks extends AppCompatActivity {
     TextView workouts, diets;
 
@@ -13,7 +15,7 @@ public class Guidebooks extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guidebooks);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         workouts = findViewById(R.id.gWorkouts);
         diets = findViewById(R.id.gDiets);

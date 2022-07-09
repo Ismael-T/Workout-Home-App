@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@color/mariner_blue"
     android:theme="@style/ThemeOverlay.WorkoutHome.FullscreenContainer"
     tools:context=".WorkoutStart">
 
@@ -13,26 +13,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:text="Get Ready"
-        android:textColor="@color/black"
-        android:textSize="23sp"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/workoutStartTv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
-        android:text="workout starts in.."
-        android:textColor="@color/black"
+        android:layout_marginTop="12dp"
+        android:text="workout starts in..."
+        android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workoutStartTv" />
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/workoutStartTv"
+        app:layout_constraintTop_toBottomOf="@+id/workoutStartTv"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/workoutTimerTv"
@@ -41,12 +44,34 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="84dp"
         android:text="3s"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workoutStartTv" />
+        app:layout_constraintTop_toBottomOf="@+id/workoutStartTv"
+        tools:ignore="HardcodedText" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="375dp"
+        android:layout_height="275dp"
+        android:background="#FFFFFFFF"
+        android:elevation="10dp"
+        app:cardCornerRadius="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/workoutCompletionTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workoutTimerTv">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/wsGIF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/j_squat" />
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/workoutCompletionTv"
@@ -55,9 +80,10 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="132dp"
         android:text="0/6 exercises completed"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

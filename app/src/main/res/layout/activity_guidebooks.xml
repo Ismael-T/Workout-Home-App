@@ -20,7 +20,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/guideTv2"
@@ -28,20 +29,23 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginTop="6dp"
-        android:text="for your fitness at home"
-        android:textStyle="italic"
+        android:text="for your fitness at home..."
         android:textColor="@color/white"
         android:textSize="18sp"
+        android:textStyle="italic"
         app:layout_constraintStart_toStartOf="@+id/guideTv1"
-        app:layout_constraintTop_toBottomOf="@+id/guideTv1" />
+        app:layout_constraintTop_toBottomOf="@+id/guideTv1"
+        tools:ignore="HardcodedText" />
 
-    <FrameLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/gFrame1"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="56dp"
         android:orientation="horizontal"
+        android:elevation="10dp"
+        app:cardCornerRadius="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideTv2">
@@ -50,7 +54,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/gigachad" />
+            android:src="@drawable/gigachad"
+            tools:ignore="ContentDescription" />
 
         <TextView
 
@@ -58,45 +63,50 @@
             android:layout_width="250dp"
             android:layout_height="75dp"
             android:layout_gravity="center"
-            android:background="#992980B9"
+            android:background="@drawable/round"
             android:gravity="center"
             android:lineSpacingExtra="12dp"
             android:text="Workouts Wiki"
             android:textColor="@color/white"
             android:textSize="24sp"
-            android:textStyle="bold" />
-    </FrameLayout>
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+    </androidx.cardview.widget.CardView>
 
-    <FrameLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/gFrame2"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginHorizontal="24dp"
         android:layout_marginBottom="56dp"
+        android:elevation="10dp"
         android:orientation="horizontal"
+        app:cardCornerRadius="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gFrame1">
 
-        <com.google.android.material.imageview.ShapeableImageView
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/greens" />
+            android:src="@drawable/greens"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/gDiets"
             android:layout_width="250dp"
             android:layout_height="75dp"
             android:layout_gravity="center"
-            android:background="#992980B9"
+            android:background="@drawable/round"
             android:gravity="center"
             android:lineSpacingExtra="12dp"
             android:text="Healthy Diet Recipes"
             android:textColor="@color/white"
             android:textSize="24sp"
-            android:textStyle="bold" />
-    </FrameLayout>
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,6 +36,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".WeeklyProgress"
+            android:exported="true">
+            <intent-filter>
+                <action android:name=".WeeklyProgress" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".WorkoutSets"
             android:exported="true">
             <intent-filter>

@@ -3,13 +3,14 @@ package com.ji_tarras.workouthome;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class WorkoutSets extends AppCompatActivity implements View.OnClickListener {
+import java.util.Objects;
+
+public class WorkoutSets extends AppCompatActivity {
 
     TextView light, moderate, intense;
 
@@ -20,7 +21,7 @@ public class WorkoutSets extends AppCompatActivity implements View.OnClickListen
             doubleBackToExitPressedOnce = false;
         }
     };
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
 
     @Override
     protected void onDestroy() {
@@ -48,30 +49,25 @@ public class WorkoutSets extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout_sets);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         light = findViewById(R.id.lightWorkout);
         moderate = findViewById(R.id.moderateWorkout);
         intense = findViewById(R.id.intenseWorkout);
 
-    }
-
-    @Override
-    public void onClick(View v) {
-        int set;
-        switch (v.getId()) {
-            case R.id.lightWorkout:
-                set = 1;
-                break;
-            case R.id.moderateWorkout:
-                set = 2;
-                break;
-            case R.id.intenseWorkout:
-                set = 3;
-                break;
-        }
-
-        Intent j = new Intent(WorkoutSets.this, WorkoutStart.class);
-        startActivity(j);
-
+        light.setOnClickListener(v -> {
+            Intent ligW = new Intent(WorkoutSets.this, WorkoutStart.class);
+            ligW.putExtra("wos", 1);
+            startActivity(ligW);
+        });
+        moderate.setOnClickListener(v -> {
+            Intent modW = new Intent(WorkoutSets.this, WorkoutStart.class);
+            modW.putExtra("wos", 2);
+            startActivity(modW);
+        });
+        intense.setOnClickListener(v -> {
+            Intent intW = new Intent(WorkoutSets.this, WorkoutStart.class);
+            intW.putExtra("wos", 3);
+            startActivity(intW);
+        });
     }
 }

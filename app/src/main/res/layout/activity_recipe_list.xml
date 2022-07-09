@@ -21,7 +21,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/recipeListTv2"
@@ -29,21 +30,24 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginTop="6dp"
-        android:text="homemade recipes for you"
+        android:text="homemade recipes for you..."
         android:textColor="@color/white"
         android:textSize="13sp"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="@+id/recipeListTv1"
-        app:layout_constraintTop_toBottomOf="@+id/recipeListTv1" />
+        app:layout_constraintTop_toBottomOf="@+id/recipeListTv1"
+        tools:ignore="HardcodedText" />
 
 
-    <FrameLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/rFrame1"
         android:layout_width="match_parent"
         android:layout_height="175dp"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="16dp"
+        android:elevation="10dp"
         android:orientation="horizontal"
+        app:cardCornerRadius="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipeListTv2">
@@ -52,27 +56,31 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/sweetpotato" />
+            android:src="@drawable/sweetpotato"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/sweetPotato"
             android:layout_width="250dp"
             android:layout_height="75dp"
             android:layout_gravity="center"
-            android:background="#992980B9"
+            android:background="@drawable/round"
             android:gravity="center"
             android:lineSpacingExtra="6dp"
             android:text="Sweet Potato, Broccoli w/Eggs"
             android:textColor="@color/white"
-            android:textStyle="bold" />
-    </FrameLayout>
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+    </androidx.cardview.widget.CardView>
 
-    <FrameLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/rFrame2"
         android:layout_width="match_parent"
         android:layout_height="175dp"
         android:layout_marginHorizontal="24dp"
+        android:elevation="10dp"
         android:orientation="horizontal"
+        app:cardCornerRadius="30sp"
         app:layout_constraintBottom_toTopOf="@+id/rFrame3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,28 +90,32 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/summerskillet" />
+            android:src="@drawable/summerskillet"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/summerSkillet"
             android:layout_width="250dp"
             android:layout_height="75dp"
             android:layout_gravity="center"
-            android:background="#992980B9"
+            android:background="@drawable/round"
             android:gravity="center"
             android:lineSpacingExtra="6dp"
             android:text="Summer Skillet Vegetable\nEgg Scramble"
             android:textColor="@color/white"
-            android:textStyle="bold" />
-    </FrameLayout>
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+    </androidx.cardview.widget.CardView>
 
-    <FrameLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/rFrame3"
         android:layout_width="match_parent"
         android:layout_height="175dp"
         android:layout_marginHorizontal="24dp"
         android:layout_marginBottom="24dp"
+        android:elevation="10dp"
         android:orientation="horizontal"
+        app:cardCornerRadius="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -112,18 +124,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/mushroom" />
+            android:src="@drawable/mushroom"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/mushroom"
             android:layout_width="250dp"
             android:layout_height="75dp"
             android:layout_gravity="center"
-            android:background="#992980B9"
+            android:background="@drawable/round"
             android:gravity="center"
             android:lineSpacingExtra="6dp"
             android:text="Spinach, Mushroom, and\nEgg Casserole"
             android:textColor="@color/white"
-            android:textStyle="bold" />
-    </FrameLayout>
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Objects;
 
 public class RecipeInfo extends AppCompatActivity {
-    String[] Dish = {"Sweet Potato and Broccoli with Eggs", "Summer Skillet Vegetable Egg Scramble", "Spinach, Mushroom and Egg Casserole" };
+    String[] Dish = {"Sweet Potato and Broccoli with Eggs", "Summer Skillet Vegetable Egg Scramble", "Spinach, Mushroom and Egg Casserole"};
     Integer[] Img = {R.drawable.sweetpotato, R.drawable.summerskillet, R.drawable.mushroom};
 
     ImageView rImg;
@@ -31,7 +31,7 @@ public class RecipeInfo extends AppCompatActivity {
 
         rImg.setImageResource(Img[r]);
         rName.setText(Dish[r]);
-        switch (r){
+        switch (r) {
             case 0:
                 rIng.setText(R.string.sweetpotato_ing);
                 rSteps.setText(R.string.sweetpotato_steps);
